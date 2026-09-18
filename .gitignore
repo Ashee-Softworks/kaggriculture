@@ -1,0 +1,16 @@
+# The virtualenv, if one is ever made here. The runner needs no dependencies at all — it is
+# standard-library Python — so this exists only to keep one from being committed by accident.
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Scratch.
+*.log
+.DS_Store
+data/
+replays/
+
+# `bench/out/` is deliberately NOT ignored: it is the evidence behind the table in README.md,
+# and a measurement that is regenerated but never committed is a claim with its proof held
+# locally and nowhere else.

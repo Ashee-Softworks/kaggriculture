@@ -1,0 +1,41 @@
+{
+  "starter": {
+    "opponent": "starter",
+    "episodes": 16,
+    "mean_mine": 3539.4,
+    "worst_mine": 3384.0,
+    "best_mine": 3908.0,
+    "mean_margin": 0.0,
+    "worst_margin": 0.0,
+    "wins": 0,
+    "ties": 16,
+    "losses": 0,
+    "win_rate": 0.0
+  },
+  "random": {
+    "opponent": "random",
+    "episodes": 16,
+    "mean_mine": 3582.9,
+    "worst_mine": 3419.0,
+    "best_mine": 3885.0,
+    "mean_margin": 3572.2,
+    "worst_margin": 3296.0,
+    "wins": 16,
+    "ties": 0,
+    "losses": 0,
+    "win_rate": 1.0
+  },
+  "pass": {
+    "opponent": "pass",
+    "episodes": 16,
+    "mean_mine": 3591.0,
+    "worst_mine": 3419.0,
+    "best_mine": 4382.0,
+    "mean_margin": 591.0,
+    "worst_margin": 419.0,
+    "wins": 16,
+    "ties": 0,
+    "losses": 0,
+    "win_rate": 1.0
+  }
+}

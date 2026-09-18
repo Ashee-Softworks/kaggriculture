@@ -1,0 +1,52 @@
+NOTICE — third-party material in this directory
+
+--------------------------------------------------------------------------------
+1. The Kaggriculture environment
+--------------------------------------------------------------------------------
+
+  File:    env/kaggriculture.py
+  File:    env/kaggriculture.json
+  File:    env-docs/AGENTS.md
+  File:    env-docs/README.md
+  Source:  https://github.com/Kaggle/kaggle-environments
+           kaggle_environments/envs/kaggriculture/
+  Licence: Apache License 2.0
+  Holder:  Copyright 2022 Kaggle, Inc.
+
+  These files are copied **unmodified**. The interpreter that runs locally is therefore
+  the interpreter that runs on Kaggle, which is the only reason a local score means
+  anything. They are not vendored here as a submodule because the upstream repository
+  contains twenty-one other environments and their visualisers, and this project needs
+  one of them.
+
+  `AGENTS.md` and `README.md` are also served by the competition itself at
+  https://www.kaggle.com/competitions/kaggriculture/data, gated behind accepting the
+  competition rules. They are identical files; the sizes match byte for byte (13,708 and
+  26,824 bytes). The copy here came from the public repository, not from the competition.
+
+--------------------------------------------------------------------------------
+2. One function from kaggle-environments
+--------------------------------------------------------------------------------
+
+  File:    vendor/kaggle_environments/utils.py
+  Source:  https://github.com/Kaggle/kaggle-environments
+           kaggle_environments/utils.py
+  Function: resolve_episode_seed
+  Licence: Apache License 2.0
+  Holder:  Copyright 2022 Kaggle, Inc.
+
+  The environment's only dependency outside the Python standard library is this one
+  function. It is vendored so that `env/kaggriculture.py` can be imported unmodified
+  without installing the full `kaggle-environments` package, which requires jax,
+  transformers, open_spiel, pettingzoo and pygame — and pygame has no wheel for
+  Python 3.14 and does not compile here without SDL2 development headers.
+
+--------------------------------------------------------------------------------
+3. What is NOT third-party
+--------------------------------------------------------------------------------
+
+  sim.py      — this project's runner. It reproduces the framework's step loop so that
+                Kaggle's interpreter can be driven without the framework. Every rule it
+                implements is read from `kaggle-environments/core.py` and cited there.
+  main.py     — this project's agent.
+  bench.py    — this project's evaluation harness.
