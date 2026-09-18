@@ -84,27 +84,49 @@ game is an exact tie.
 One episode was lost (`starter`, worst case 3006). It is left in the table rather than
 averaged away.
 
-## Two things this harness cannot tell you
+## What actually happened on Kaggle
 
-**1. The leaderboard number is not this number.** `starter` scores ~3,500 locally against a
-passive opponent, but the live leaderboard tops out at **3,182.7**. The game is two players
-competing for **one shared market** and one shared town demand, so two strong agents crash
-each other's prices toward the `PRICE_FLOOR` of 1. Kaggle also runs submissions over many
-episodes and pairs them against a pool. **A single local episode against a built-in opponent
-is therefore not comparable to a leaderboard score**, and nothing here should be read as a
-predicted rank.
+It was played. **Submission [56322264](https://www.kaggle.com/competitions/kaggriculture)**, a
+`VALIDATION` episode and then a `PUBLIC` one. The public episode is the one that counts:
 
-What the local numbers do establish is narrower and still useful: the agent beats Kaggle's
-own baseline on money, across seats and seeds, by a margin much larger than the seed-to-seed
-spread.
+| | Player 0 — this agent | Player 1 — the opponent |
+|---|---|---|
+| Final reward | **4,087** | **91,360** |
+| Quadrants unlocked | 2 | 3 |
+| Structures built | none | **18 pastures + 1 coop** |
+| Tiles working | 4 plants | 15 plants + 19 animals |
+| Ended with | 41 empty tiles | 6 empty tiles |
 
-**2. It has never been played on Kaggle.** Submitting requires accepting the competition
-rules on the website — a legal acceptance by the account holder, and the only thing standing
-between this code and a score. The API returns `403` until then, and reports it plainly:
+**This agent was beaten by 22×, and the local benchmark did not see it coming.** Against
+`pass`, `random` and `starter` it won at 3,921 against 3,571 — because all three of those
+work the single tile their farmer spawns on. Winning meant being slightly less tiny. The
+opponent found by the public episode actually uses its farm: three quadrants, nineteen
+animals on pasture, and animals produce **indefinitely** (`first_yield_day` then a fixed
+interval for the rest of the season), which is where a 91,360 comes from and a 4,087 cannot.
 
-```
-$ kaggle competitions download kaggriculture -p data
-403 Client Error: Forbidden
-```
+That is the failure this repository's own documentation keeps warning about — matching the
+shape of rigour without the thing itself. `bench.py` measured *something* correctly and
+pointed at the wrong thing. A benchmark against opponents that nobody else plays is a
+benchmark of the opponent, not of the agent.
 
-Nothing in this directory has been submitted, and no score has been claimed.
+**The reported `publicScore` is not the reward.** It read `600.0` an hour ago and `484.7`
+now, while the agent's money in the recorded episodes was 3,869 and 4,087. The metric is
+documented nowhere in `AGENTS.md` or `README.md` — those files define the *reward* as "the
+most money in the bank at the end of the game" and say nothing about how a season becomes a
+leaderboard number. **The gap is recorded here as an open question rather than guessed at.**
+
+What is established: the agent submits, runs, and completes a 720-turn season without error,
+and finishes with more money than it started. What is not: anything about where it places.
+
+## Two things this harness still cannot tell you
+
+**1. A local mean is not a leaderboard position.** `starter` scores ~3,500 against a passive
+opponent while the live leaderboard runs 2,945–3,172. Two agents share one market and one
+town demand, so prices fall as both sell. The local numbers are only useful for comparing two
+agents *against the same opponent* — which is why an opponent worth beating had to be found
+before any of them meant anything.
+
+**2. The validation episode was self-play.** In episode 110329561 both players ended on
+exactly **3,869** with identical farms and an identical bank trajectory — the opponent was
+this agent. A validation episode that plays the submission against itself cannot reveal that
+the submission is 4 tiles tall. It took the *public* episode to show that.

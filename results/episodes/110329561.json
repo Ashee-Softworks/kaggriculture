@@ -1,0 +1,244 @@
+{
+  "file": "/tmp/replay/episode-110329561-replay.json",
+  "steps": 720,
+  "configuration": {
+    "episodeSteps": 720,
+    "boardSize": 10,
+    "startingMoney": 3000,
+    "turnsPerDay": 24,
+    "actTimeout": 1,
+    "seed": null
+  },
+  "players": [
+    {
+      "player": 0,
+      "status": "DONE",
+      "reward": 3869.0,
+      "money": 3869.0,
+      "quadrants": [
+        "NW",
+        "NE"
+      ],
+      "tiles": {
+        "empty": 41,
+        "WEED": 5,
+        "PLANT": 4,
+        "locked": 50
+      },
+      "shed": {
+        "CARROT": 0,
+        "COW": 0,
+        "EGG": 0,
+        "FERTILIZER": 0,
+        "GOOSE": 0,
+        "MELON": 0,
+        "MILK": 0,
+        "SHEEP": 0,
+        "STRAWBERRY": 0,
+        "TOMATO": 0,
+        "WHEAT": 0,
+        "WOOL": 0
+      },
+      "seeds": {
+        "CARROT": 0,
+        "MELON": 0,
+        "STRAWBERRY": 0,
+        "TOMATO": 0,
+        "WHEAT": 40
+      }
+    },
+    {
+      "player": 1,
+      "status": "DONE",
+      "reward": 3869.0,
+      "money": 3869.0,
+      "quadrants": [
+        "NW",
+        "NE"
+      ],
+      "tiles": {
+        "empty": 39,
+        "WEED": 7,
+        "PLANT": 4,
+        "locked": 50
+      },
+      "shed": {
+        "CARROT": 0,
+        "COW": 0,
+        "EGG": 0,
+        "FERTILIZER": 0,
+        "GOOSE": 0,
+        "MELON": 0,
+        "MILK": 0,
+        "SHEEP": 0,
+        "STRAWBERRY": 0,
+        "TOMATO": 0,
+        "WHEAT": 0,
+        "WOOL": 0
+      },
+      "seeds": {
+        "CARROT": 0,
+        "MELON": 0,
+        "STRAWBERRY": 0,
+        "TOMATO": 0,
+        "WHEAT": 40
+      }
+    }
+  ],
+  "trajectory": [
+    {
+      "step": 0,
+      "day": 0,
+      "money": [
+        3000.0,
+        3000.0
+      ],
+      "wheatPrice": 25,
+      "wheatInventory": 10000
+    },
+    {
+      "step": 60,
+      "day": 2,
+      "money": [
+        2698.0,
+        2698.0
+      ],
+      "wheatPrice": 27,
+      "wheatInventory": 9997
+    },
+    {
+      "step": 120,
+      "day": 5,
+      "money": [
+        2650.0,
+        2650.0
+      ],
+      "wheatPrice": 29,
+      "wheatInventory": 9983
+    },
+    {
+      "step": 180,
+      "day": 7,
+      "money": [
+        2961.0,
+        2961.0
+      ],
+      "wheatPrice": 28,
+      "wheatInventory": 9989
+    },
+    {
+      "step": 240,
+      "day": 10,
+      "money": [
+        3247.0,
+        3247.0
+      ],
+      "wheatPrice": 28,
+      "wheatInventory": 9990
+    },
+    {
+      "step": 300,
+      "day": 12,
+      "money": [
+        3195.0,
+        3195.0
+      ],
+      "wheatPrice": 32,
+      "wheatInventory": 9954
+    },
+    {
+      "step": 360,
+      "day": 15,
+      "money": [
+        3566.0,
+        3566.0
+      ],
+      "wheatPrice": 33,
+      "wheatInventory": 9931
+    },
+    {
+      "step": 420,
+      "day": 17,
+      "money": [
+        3939.0,
+        3939.0
+      ],
+      "wheatPrice": 35,
+      "wheatInventory": 9892
+    },
+    {
+      "step": 480,
+      "day": 20,
+      "money": [
+        3931.0,
+        3931.0
+      ],
+      "wheatPrice": 38,
+      "wheatInventory": 9818
+    },
+    {
+      "step": 540,
+      "day": 22,
+      "money": [
+        3179.0,
+        3179.0
+      ],
+      "wheatPrice": 41,
+      "wheatInventory": 9755
+    },
+    {
+      "step": 600,
+      "day": 25,
+      "money": [
+        3151.0,
+        3151.0
+      ],
+      "wheatPrice": 43,
+      "wheatInventory": 9663
+    },
+    {
+      "step": 660,
+      "day": 27,
+      "money": [
+        3641.0,
+        3641.0
+      ],
+      "wheatPrice": 45,
+      "wheatInventory": 9594
+    }
+  ],
+  "finalMarket": {
+    "prices": {
+      "CARROT": 37,
+      "EGG": 58,
+      "FERTILIZER": 100,
+      "MELON": 280,
+      "MILK": 386,
+      "STRAWBERRY": 301,
+      "TOMATO": 216,
+      "WHEAT": 47,
+      "WOOL": 240
+    },
+    "inventory": {
+      "CARROT": 9970,
+      "EGG": 9862,
+      "FERTILIZER": 10000,
+      "MELON": 9970,
+      "MILK": 9322,
+      "STRAWBERRY": 9538,
+      "TOMATO": 9646,
+      "WHEAT": 9514,
+      "WOOL": 9898
+    },
+    "town": [
+      "PIZZA_SHOP",
+      "SMOOTHIE_SHOP",
+      "ICE_CREAM_SHOP",
+      "BRUNCH_SPOT",
+      "PIZZA_SHOP",
+      "PIZZA_SHOP",
+      "ICE_CREAM_SHOP",
+      "YARN_STORE"
+    ]
+  }
+}

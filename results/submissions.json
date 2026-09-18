@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "competition": "kaggriculture",
+  "note": "Append-only. An entry is created once and never rewritten; later knowledge is appended to its `history`. A refusal is recorded as an outcome, not as an error. Every score is quoted from the Kaggle API, never computed locally.",
+  "submissions": [
+    {
+      "attemptedAt": "2026-09-18T05:59:32+00:00",
+      "message": "wheat loop, 3 hands, parity with starter local bench",
+      "agentFile": "main.py",
+      "agentSha256": "b14ef7a965363945305e8f2a8b2129de0a4c63ba632af1fa3a5587bb5a87c4a1",
+      "agentCommit": "f23571e75ba29ad7436b1159a9a4f8d874ec8b1a",
+      "agentCommitSubject": "feat(kaggriculture): an agent, and a local harness that runs Kaggle's own interpreter",
+      "agentCommitDate": "2026-09-18T05:30:31Z",
+      "agentDirty": true,
+      "localBenchAtRecord": {
+        "main": {
+          "starter": {
+            "opponent": "starter",
+            "episodes": 16,
+            "mean_mine": 3917.2,
+            "worst_mine": 3006.0,
+            "best_mine": 4127.0,
+            "mean_margin": 376.4,
+            "worst_margin": -443.0,
+            "wins": 15,
+            "ties": 0,
+            "losses": 1,
+            "win_rate": 0.9375
+          },
+          "random": {
+            "opponent": "random",
+            "episodes": 16,
+            "mean_mine": 3923.8,
+            "worst_mine": 3638.0,
+            "best_mine": 4180.0,
+            "mean_margin": 3917.5,
+            "worst_margin": 3638.0,
+            "wins": 16,
+            "ties": 0,
+            "losses": 0,
+            "win_rate": 1.0
+          },
+          "pass": {
+            "opponent": "pass",
+            "episodes": 16,
+            "mean_mine": 3923.4,
+            "worst_mine": 3006.0,
+            "best_mine": 4188.0,
+            "mean_margin": 923.4,
+            "worst_margin": 6.0,
+            "wins": 16,
+            "ties": 0,
+            "losses": 0,
+            "win_rate": 1.0
+          }
+        },
+        "starter": {
+          "starter": {
+            "opponent": "starter",
+            "episodes": 16,
+            "mean_mine": 3539.4,
+            "worst_mine": 3384.0,
+            "best_mine": 3908.0,
+            "mean_margin": 0.0,
+            "worst_margin": 0.0,
+            "wins": 0,
+            "ties": 16,
+            "losses": 0,
+            "win_rate": 0.0
+          },
+          "random": {
+            "opponent": "random",
+            "episodes": 16,
+            "mean_mine": 3582.9,
+            "worst_mine": 3419.0,
+            "best_mine": 3885.0,
+            "mean_margin": 3572.2,
+            "worst_margin": 3296.0,
+            "wins": 16,
+            "ties": 0,
+            "losses": 0,
+            "win_rate": 1.0
+          },
+          "pass": {
+            "opponent": "pass",
+            "episodes": 16,
+            "mean_mine": 3591.0,
+            "worst_mine": 3419.0,
+            "best_mine": 4382.0,
+            "mean_margin": 591.0,
+            "worst_margin": 419.0,
+            "wins": 16,
+            "ties": 0,
+            "losses": 0,
+            "win_rate": 1.0
+          }
+        }
+      },
+      "outcome": "accepted",
+      "kaggle": {
+        "exitCode": 0,
+        "stdout": "Successfully submitted to Kaggriculture",
+        "stderr": "",
+        "submissionsAfterAttempt": {
+          "httpStatus": 200,
+          "count": 1
+        },
+        "status": "complete",
+        "score": "484.7",
+        "privateScore": null,
+        "errorDescription": null,
+        "submittedAt": "2026-09-18T05:59:35.887Z"
+      },
+      "history": [
+        {
+          "at": "2026-09-18T05:59:32+00:00",
+          "status": "attempted",
+          "score": null,
+          "note": "wheat loop, 3 hands, parity with starter local bench"
+        },
+        {
+          "at": "2026-09-18T05:59:36+00:00",
+          "status": "accepted",
+          "score": null,
+          "note": "the CLI accepted the file"
+        },
+        {
+          "at": "2026-09-18T06:04:19+00:00",
+          "status": "identified",
+          "score": null,
+          "note": "submission 56322264 adopted from the API; the entry stored no identifier because the recorder read `id` where the API sends `ref`"
+        },
+        {
+          "at": "2026-09-18T06:04:19+00:00",
+          "status": "complete",
+          "score": "600.0",
+          "privateScore": null,
+          "errorDescription": null,
+          "submittedAt": "2026-09-18T05:59:35.887Z"
+        },
+        {
+          "at": "2026-09-18T06:09:43+00:00",
+          "status": "complete",
+          "score": "484.7",
+          "privateScore": null,
+          "errorDescription": null,
+          "submittedAt": "2026-09-18T05:59:35.887Z"
+        }
+      ],
+      "submissionId": 56322264
+    }
+  ],
+  "refreshes": [
+    {
+      "at": "2026-09-18T05:59:40+00:00",
+      "httpStatus": 200,
+      "seen": 0,
+      "changed": 0
+    },
+    {
+      "at": "2026-09-18T06:04:19+00:00",
+      "httpStatus": 200,
+      "seen": 1,
+      "changed": 2
+    },
+    {
+      "at": "2026-09-18T06:09:43+00:00",
+      "httpStatus": 200,
+      "seen": 1,
+      "changed": 1
+    }
+  ]
+}
