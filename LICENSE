@@ -1,0 +1,53 @@
+PROPRIETARY AND CONFIDENTIAL — ALL RIGHTS RESERVED
+NO LICENSE IS GRANTED
+
+Copyright (c) 2026 Ashee Softworks. All rights reserved.
+
+This repository and everything in it — source code, object code, generated output, tests,
+documentation, diagrams, data, the names of its components, and its structure and
+organisation — is the exclusive property of Ashee Softworks and is protected by copyright.
+
+1. NO RIGHTS. No licence, right, interest, or permission of any kind is granted to any
+   person or entity, whether by implication, estoppel, or otherwise, by this notice, by
+   possession of, or by access to, any part of this repository. The copyright holder
+   reserves every right, including all rights of use, reproduction and distribution.
+
+2. NO USE. Without the prior written permission of the copyright holder, no person or
+   entity may use, run, execute, compile, deploy, host, serve, copy, reproduce, store,
+   modify, adapt, translate, port, paraphrase, summarise, index, embed, train on,
+   distribute, publish, transmit, display, perform, sublicense, sell, resell, rent, lease,
+   lend, or create derivative works from any part of this repository, in whole or in part,
+   by any means, for any purpose, commercial or non-commercial.
+
+3. NO REVERSE ENGINEERING. Without the prior written permission of the copyright holder,
+   no person or entity may reverse engineer, decompile, disassemble, or otherwise attempt
+   to derive the source code, algorithms, structure, or organisation of any part of this
+   repository.
+
+4. NO ACCESS. Access to this repository is granted only by the copyright holder and only
+   under a separate written agreement. If you have obtained access to any part of it
+   without such an agreement, you have no right to read, retain, or use it: delete every
+   copy, including cached, backup, and derived copies, and notify the copyright holder.
+
+5. THIRD-PARTY COMPONENTS. Some files in this repository are third-party components,
+   included under their own licences, which are listed in NOTICE and which this licence
+   does not replace, alter, or extend. Those files remain governed by their own terms, and
+   the copyright notices in them must not be removed. In particular, `vendor/unqlite/` is
+   UnQLite 1.1.7, Copyright (c) 2012-2024, Symisc Systems, under the BSD 2-Clause licence
+   reproduced at `vendor/unqlite/LICENSE`.
+
+6. NO WARRANTY. This software is provided "AS IS", without warranty of any kind, express
+   or implied, including but not limited to the warranties of merchantability, fitness for
+   a particular purpose, title, and non-infringement. In no event shall the copyright
+   holder be liable for any claim, damages, or other liability, whether in an action of
+   contract, tort, or otherwise, arising from, out of, or in connection with the software
+   or its use.
+
+7. ENFORCEMENT. Any use, reproduction, or distribution not expressly permitted in writing
+   by the copyright holder is an infringement of copyright and may also constitute
+   misappropriation of confidential information. The copyright holder will pursue every
+   available legal and equitable remedy, including injunctive relief and recovery of
+   damages, statutory and otherwise, together with costs and legal fees.
+
+For permission, write to the copyright holder of record. Permission is granted only
+in a signed writing, and only to the extent stated in it.
