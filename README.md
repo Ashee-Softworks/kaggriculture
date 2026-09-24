@@ -130,3 +130,31 @@ before any of them meant anything.
 exactly **3,869** with identical farms and an identical bank trajectory — the opponent was
 this agent. A validation episode that plays the submission against itself cannot reveal that
 the submission is 4 tiles tall. It took the *public* episode to show that.
+
+## Licence
+
+**BSD Zero Clause License** (`0BSD`) for everything this project wrote — `main.py`, `sim.py`,
+`bench.py`, and this document. Copyright (C) 2026 Ashee Softworks. The licence is five lines, and
+the grant is one sentence of it in `LICENSE`:
+
+> Permission to use, copy, modify, and/or distribute this software for any purpose with or
+> without fee is hereby granted.
+
+No attribution is required, no changes have to be published, and anyone who takes a copy may
+close it, relicense it and submit it as their own.
+
+**It does not cover everything in this repository, and the exception is not this project's to
+give.** Everything under `env/` is Kaggle's — the environment, the JSON schema and the four
+documents — as is one function under `vendor/`. They remain under **Apache License 2.0, Copyright
+2022 Kaggle, Inc.** `env/kaggriculture.py` is a byte-for-byte copy, and its sha256 is in the section
+above. The list of those files is in `NOTICE` and is **not repeated here**, because a list kept in
+two places drifts — and this was one: the first version of this paragraph named a directory that
+does not exist, because it was copied from a version of `NOTICE` that had the same error in it.
+
+**Changed on 2026-09-24.** Until then this repository carried `PROPRIETARY AND CONFIDENTIAL — ALL
+RIGHTS RESERVED / NO LICENSE IS GRANTED`. That wording is still in every commit before the change —
+a later commit does not unpublish it, and the previous commit on this subject is titled *"legal:
+apply the organisation's proprietary licence to this repository"*. An open grant cannot be recalled
+either, so every copy taken under 0BSD stays free, for anyone, for good. Both directions are
+permanent.
+

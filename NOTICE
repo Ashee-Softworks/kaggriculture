@@ -6,8 +6,10 @@ NOTICE — third-party material in this directory
 
   File:    env/kaggriculture.py
   File:    env/kaggriculture.json
-  File:    env-docs/AGENTS.md
-  File:    env-docs/README.md
+  File:    env/AGENTS.md
+  File:    env/README.md
+  File:    env/beginner-AGENTS.md
+  File:    env/beginner-README.md
   Source:  https://github.com/Kaggle/kaggle-environments
            kaggle_environments/envs/kaggriculture/
   Licence: Apache License 2.0
@@ -18,6 +20,13 @@ NOTICE — third-party material in this directory
   anything. They are not vendored here as a submodule because the upstream repository
   contains twenty-one other environments and their visualisers, and this project needs
   one of them.
+
+  **Corrected 2026-09-24.** The two document paths in this list read `env-docs/AGENTS.md`
+  and `env-docs/README.md` until then, and **no such directory exists** — the files are in
+  `env/`. The two beginner documents were missing from the list altogether. The sizes
+  asserted in the next paragraph were right all along, and they are how the error was
+  found: an assertion about a file that does not resolve is still checkable against the
+  file that does.
 
   `AGENTS.md` and `README.md` are also served by the competition itself at
   https://www.kaggle.com/competitions/kaggriculture/data, gated behind accepting the
@@ -50,3 +59,21 @@ NOTICE — third-party material in this directory
                 implements is read from `kaggle-environments/core.py` and cited there.
   main.py     — this project's agent.
   bench.py    — this project's evaluation harness.
+
+--------------------------------------------------------------------------------
+4. The licence, and which part of it applies to which files
+--------------------------------------------------------------------------------
+
+  Everything this project wrote is under the **BSD Zero Clause License (0BSD)** — see
+  `LICENSE`. It grants permission to use, copy, modify and/or distribute for any purpose
+  with or without fee, and asks for nothing back: no attribution, no published changes.
+
+  **That grant does not extend to the files listed in sections 1 and 2 above.** They are
+  Kaggle's, they remain under **Apache License 2.0, Copyright 2022 Kaggle, Inc.**, and no
+  licence chosen here can alter that. `env/kaggriculture.py` is copied unmodified and
+  `vendor/kaggle_environments/utils.py` is one function copied from the same project; both
+  keep their own terms and the copyright notices in them must not be removed.
+
+  Changed on 2026-09-24. Before that the repository's own files were proprietary
+  (`PROPRIETARY AND CONFIDENTIAL — ALL RIGHTS RESERVED / NO LICENSE IS GRANTED`); that
+  wording remains in the history, as a later commit does not unpublish it.

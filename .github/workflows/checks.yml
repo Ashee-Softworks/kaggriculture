@@ -1,0 +1,93 @@
+# The checks this repository can run by itself.
+#
+# Two of them, and each is here for a reason rather than symmetry:
+#
+#   1. **The leak audit.** It belongs in every repository, because its questions are about *this*
+#      repository — is a secret tracked, is one in the history, does a published link resolve. The
+#      script lives in the harness repository and is *cloned* rather than copied: one copy that
+#      cannot drift, in place of three that can. The harness repository is public, which is what
+#      makes that possible; if it is ever made private these jobs need a token.
+#
+#   2. **The submission plays a full episode.** `sim.py` drives Kaggle's own unmodified interpreter,
+#      so one seeded episode is the cheapest possible proof that the agent actually runs — 720
+#      turns, no dependencies, a fifth of a second. It is not a score check: a number here means
+#      nothing on its own, which this repository's README already argues at length.
+#
+# Neither check needs network access to Kaggle, and neither submits anything.
+
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "23 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The leak audit walks every reachable commit. The default checkout is `--depth=1`, which
+          # would leave that question answering "none" about a history it never read — a clean
+          # verdict on one commit. See the note in the harness repository's workflow.
+          fetch-depth: 0
+
+      - name: the leak audit script, one copy of it
+        # Cloned **outside** the repository, and that is not tidiness. The audit greps its root for
+        # the account name, the links and the secrets — and a clone sitting at `.harness/` inside the
+        # tree is part of that root, so the harness repository's own prose would be audited as though
+        # it were this repository's. Kept here instead, where nothing is looking at it.
+        run: git clone --depth=1 https://github.com/Ashee-Softworks/asheeas-harness.git /tmp/ashee-harness
+
+      - name: the leak audit
+        run: sh /tmp/ashee-harness/leak-audit.sh .
+
+      - uses: actions/setup-python@v5
+        with:
+          # The project targets Python 3.14 and the standard library only. `3.x` rather than a pinned
+          # patch, because a runner image that does not carry the exact patch would fail the job for
+          # a reason that has nothing to do with the code.
+          python-version: "3.x"
+
+      - name: the submission plays a full episode
+        # Deterministic: same seed, same opponent, same 720 turns. Measured here at 0.23s.
+        #
+        # The before/after comparison is the check, not the episode. It asks whether playing a game
+        # writes anything into the tree — and it compares the state to itself rather than to HEAD,
+        # because a repository with legitimately uncommitted work is not a repository where a check
+        # should cry wolf. (The first version of this step compared against HEAD and reported a
+        # failure caused by the person's own edits. A gate that fires on the wrong thing is how a
+        # gate stops being read.)
+        run: |
+          before="$(git status --porcelain)"
+          python3 sim.py --agent main.py --opponent starter --seed 1
+          after="$(git status --porcelain)"
+          if [ "$before" != "$after" ]; then
+            echo "the episode changed the working tree:"
+            diff <(printf '%s\n' "$before") <(printf '%s\n' "$after") || true
+            exit 1
+          fi
+          echo "  the working tree is exactly as it was before the episode"
+
+      - name: what this run did not check
+        run: |
+          cat <<'EOF'
+          Ran: the leak audit, and one seeded episode of the submission.
+
+          Not run, and each is a gap rather than a pass:
+            * bench.py         -- a distribution over many seeds takes minutes; run it before judging
+                                  an agent, not on every push
+            * the submission   -- this does not enter the competition, accept its rules, or submit
+                                  anything. Accepting the rules is a legal act by the account
+                                  holder and belongs to a person.
+            * the leaderboard  -- nothing here can tell you where this agent places. The public
+                                  episode beat it 22x, and that number is in README.md.
+          EOF
